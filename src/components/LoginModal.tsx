@@ -2,17 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 const Header = () => {
-  const closeModal = () => {
-    document.getElementById("id01")!.style.display = "none";
-  };
-
   return (
     <div id="id01" className="w3-modal">
       <div className="w3-modal-content">
         <div className="w3-container">
-          <span onClick={closeModal} className="w3-button w3-display-topright">
+          {/* <span onClick={closeModal} className="w3-button w3-display-topright">
             &times;
-          </span>
+          </span> */}
           <section className="flex justify-center items-center h-screen bg-gray-100">
             <div className="max-w-md w-full bg-white rounded p-6 space-y-4">
               <div className="mb-4">

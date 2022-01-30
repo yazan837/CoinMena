@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Dialog from "./Dialog";
+
 import "./index.css";
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
   const [navs, setNavs] = useState([
     { id: "1", title: "Home", link: "/", active: true },
     { id: "2", title: "Trade", link: "/trade", active: false },
@@ -24,6 +28,7 @@ const Header = () => {
   return (
     <div className="container mx-auto m-3">
       <div className="flex items-center justify-between m-3">
+        <Dialog open={open} setOpen={setOpen} />
         <div className="column-8 flex items-center justify-center m-3">
           {navs.map((nav) => (
             <Link
@@ -37,7 +42,7 @@ const Header = () => {
           ))}
         </div>
         <div className="column-4 flex items-center justify-center">
-          <button className="m-5 login-button" onClick={openModal}>
+          <button className="m-5 login-button" onClick={() => setOpen(!open)}>
             Login
           </button>
         </div>
